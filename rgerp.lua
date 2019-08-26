@@ -3,7 +3,7 @@ rgerp = Proto("RGERP", "RGERP", "Redundant Gigabit Ethernet Ring Protocol")
 local f = rgerp.fields
 local vs_ringState = {[0]="normal",[1]="abnormal"}
 -- no idea why portstate 6 is up, but this works. I expected 0 down 1 up or 1 down 2 up.
-local vs_portState = {[0]="down",[6]="up"}
+local vs_portState = {[1]="rx below",[0]="down",[6]="up"}
 
 f.packetType = ProtoField.string("rgerp.packetType","LLC Type")
 f.ringId = ProtoField.uint16("rgerp.ringId", "Ring ID")
